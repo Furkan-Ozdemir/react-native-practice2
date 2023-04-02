@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/core': ^7.20.0
   expo: ^48.0.0
+  expo-linear-gradient: ~12.1.2
   expo-status-bar: ~1.4.4
   react: 18.2.0
   react-dom: 18.2.0
@@ -11,6 +12,7 @@ specifiers:
 
 dependencies:
   expo: 48.0.9_@babel+core@7.21.4
+  expo-linear-gradient: 12.1.2_expo@48.0.9
   expo-status-bar: 1.4.4
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -3351,6 +3353,14 @@ packages:
 
   /expo-keep-awake/12.0.1_expo@48.0.9:
     resolution: {integrity: sha512-hqeCnb4033TyuZaXs93zTK7rjVJ3bywXATyMmKmKkLEsH2PKBAl/VmjlCOPQL/2Ncqz6aj7Wo//tjeJTARBD4g==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.9_@babel+core@7.21.4
+    dev: false
+
+  /expo-linear-gradient/12.1.2_expo@48.0.9:
+    resolution: {integrity: sha512-e1d6Hq5qsRL8sWutrOuQhuir4vHiRJ1PmvDIL8P33mt51Y8VFTQjTG/mr5qJlT8lUD/ADJfaBLzV7SNqSuDTLQ==}
     peerDependencies:
       expo: '*'
     dependencies:

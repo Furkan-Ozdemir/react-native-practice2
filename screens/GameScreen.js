@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert, ScrollView } from "react-native";
 import Title from "../components/ui/Title";
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
@@ -24,7 +24,7 @@ const GameScreen = ({ userChoice, onGameOver }) => {
 
   useEffect(() => {
     if (currentGuess === userChoice) {
-      onGameOver();
+      onGameOver(guessRounds.length);
     }
   }, [currentGuess, userChoice, onGameOver]);
 
@@ -63,7 +63,6 @@ const GameScreen = ({ userChoice, onGameOver }) => {
       <Title>Opponent's Guess</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <View>
-        <Text>Higher or lower?</Text>
         <View style={styles.buttonContainer}>
           <PrimaryButton onPress={() => nextGuessHandler("greater")}>
             <Ionicons name="md-add" size={24} color={"#fff"} />
@@ -73,7 +72,7 @@ const GameScreen = ({ userChoice, onGameOver }) => {
           </PrimaryButton>
         </View>
       </View>
-      <View>
+      <ScrollView>
         {guessRounds.map((guess, index) => (
           <GuessLogItem
             key={guess}
@@ -81,7 +80,7 @@ const GameScreen = ({ userChoice, onGameOver }) => {
             guess={guess}
           />
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 };
